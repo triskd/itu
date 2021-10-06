@@ -1,6 +1,8 @@
 ITU PROJEKT 2020
 autor: David Tříska, xtrisk05
 -------------------------------------------------------------------------------------------------
+- skolni projekt pro predmet ITU - Tvorba uzivatelskych rozhrani.
+- sudoku aplikace (Java + javafx) slouzici jako front-end ziskava data ze simulovaneho back-end (PHP)
 - seznam souboru:
 	```
 	.
