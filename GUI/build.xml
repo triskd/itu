@@ -1,0 +1,62 @@
+<?xml version = "1.0"?>
+<project name = "sudoku">
+
+    <target name = "compile">
+
+        <mkdir dir="build" />
+        <mkdir dir="dest" />
+        <!-- <mkdir dir="doc" /> -->
+
+        <copy todir="build">
+            <fileset dir="lib/"/>
+        </copy>
+
+        <javac modulepath="lib/javafx-sdk-11.0.2/lib" srcdir="src/" destdir="build/" includeantruntime="true">
+            <compilerarg line="--add-modules javafx.controls,javafx.graphics,javafx.base,javafx.swing"/>
+             <classpath>
+                <pathelement path="lib/json-simple-1.1.jar"/>
+            </classpath>
+            
+        </javac>
+
+        <jar destfile="dest/ija-app.jar" basedir="build/">
+            <zipgroupfileset dir="lib" includes="json-simple-1.1.jar" />
+            <fileset dir="src">
+                <filename name="main.css"/>
+            </fileset>
+             <manifest>
+                <attribute name="Main-Class" value="view.Main" />
+                <attribute name = "Class-Path" value = "."/>
+            </manifest>
+        </jar>
+
+    </target>
+    
+    <target name = "run" depends="compile">
+        <java   modulepath="lib/javafx-sdk-11.0.2/lib" jar="./dest/ija-app.jar" fork="true">
+              <jvmarg line="--add-modules javafx.controls,javafx.graphics,javafx.base,javafx.swing"/>
+              <!-- <classpath>
+                <pathelement path="lib/json-simple-1.1.jar"/>
+              </classpath> -->
+        </java>
+       
+    </target>
+
+    <!-- Generate javadocs for current project into ${doc.dir} -->
+    <target name="doc" depends="compile" description="generate documentation">
+        <javadoc sourcepath="src" destdir="doc"/>
+    </target>
+
+    
+    <target name="clean">
+        <delete dir="build" />
+        <!-- <mkdir dir="build" /> -->
+        <delete dir="dest" />
+        <!-- <mkdir dir="dest" /> -->
+        <delete dir="lib/javafx-sdk-11.0.2"/>
+        <delete file="lib/json-simple-1.1.jar"/>
+      <!--   <delete dir="doc" />
+        <mkdir dir="doc" /> -->
+    </target>
+
+</project>
