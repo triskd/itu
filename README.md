@@ -2,6 +2,7 @@ ITU PROJEKT 2020
 autor: David Tříska, xtrisk05
 -------------------------------------------------------------------------------------------------
 - seznam souboru:
+	```
 	.
 	├── API
 	│   └── api
@@ -33,8 +34,9 @@ autor: David Tříska, xtrisk05
 	│           ├── ControlsView.java
 	│           └── Main.java
 	└── REAMDE.md
+	```
 - API:
-	- autorske soubory, tvorici beckend aplikace v soucasne dobe bezi na domene: https://www.stud.fit.vutbr.cz/~xtrisk05/itu_proj/api/
+	- autorske soubory, tvorici backend aplikace v soucasne dobe bezi na domene: https://www.stud.fit.vutbr.cz/~xtrisk05/itu_proj/api/
 	- ktera slouzi jako spolecny backend k nasim aplikacim
 	- 
 
